@@ -1,0 +1,1067 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>عيادة العلاج الطبيعي وإعادة التأهيل - د. جلال مصطفى الحمادي</title>
+
+    <!-- خط تجوال الاحترافي الحديث -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;400;500;700;800;900&display=swap" rel="stylesheet">
+
+    <!-- Bootstrap 5 RTL CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.rtl.min.css">
+    <!-- Font Awesome للأيقونات -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-navy: #0d1e36;
+            --brand-dark: #071120;
+            --brand-teal: #0ea5e9;
+            --brand-mint: #10b981;
+            --brand-gradient: linear-gradient(135deg, #0ea5e9 0%, #10b981 100%);
+            --brand-gradient-hover: linear-gradient(135deg, #0284c7 0%, #059669 100%);
+            --bg-light: #f4f8fa;
+            --text-dark: #0f172a;
+            --text-muted: #64748b;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html, body {
+            max-width: 100%;
+            overflow-x: hidden;
+        }
+
+        body {
+            font-family: 'Tajawal', sans-serif;
+            background-color: var(--bg-light);
+            color: var(--text-dark);
+            scroll-behavior: smooth;
+        }
+
+        section, header, footer {
+            scroll-margin-top: 85px;
+        }
+
+        /* ========================================================
+           الهيدر العلوي: إبراز الشعار واسم العيادة
+        ======================================================== */
+        .navbar-custom {
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid rgba(14, 165, 233, 0.12);
+            padding: 8px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1040;
+            box-shadow: 0 4px 25px rgba(13, 30, 54, 0.04);
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            min-width: 0;
+            flex-shrink: 1;
+        }
+
+        .brand-logo-img {
+            width: clamp(52px, 7.5vw, 68px) !important;
+            height: clamp(52px, 7.5vw, 68px) !important;
+            object-fit: cover !important;
+            border-radius: 50% !important;
+            background: #ffffff !important;
+            padding: 3px !important;
+            border: 2.5px solid var(--brand-teal) !important;
+            box-shadow: 0 6px 18px rgba(14, 165, 233, 0.28) !important;
+            flex-shrink: 0 !important;
+            transition: all 0.3s ease;
+        }
+
+        .brand-logo-img:hover {
+            transform: scale(1.06);
+            border-color: var(--brand-mint) !important;
+        }
+
+        .brand-title-single {
+            font-size: clamp(1rem, 3.6vw, 1.4rem) !important;
+            font-weight: 900 !important;
+            color: var(--brand-navy) !important;
+            margin: 0;
+            line-height: 1.25;
+            letter-spacing: -0.3px;
+        }
+
+        .menu-toggle-btn {
+            background: var(--brand-gradient);
+            border: none;
+            border-radius: 12px;
+            width: clamp(40px, 6vw, 46px);
+            height: clamp(40px, 6vw, 46px);
+            min-width: clamp(40px, 6vw, 46px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #ffffff;
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            box-shadow: 0 6px 16px rgba(14, 165, 233, 0.32);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .menu-toggle-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 22px rgba(16, 185, 129, 0.42);
+            color: #ffffff;
+        }
+
+        .nav-links-box .nav-link {
+            font-size: 1.02rem;
+            font-weight: 700;
+            color: var(--brand-navy) !important;
+            padding: 8px 18px !important;
+            border-radius: 30px;
+            transition: all 0.3s ease;
+        }
+
+        .nav-links-box .nav-link:hover, 
+        .nav-links-box .nav-link.active {
+            color: #ffffff !important;
+            background: var(--brand-gradient);
+            box-shadow: 0 4px 14px rgba(14, 165, 233, 0.3);
+        }
+
+        /* ========================================================
+           قسم البداية (Hero Section)
+        ======================================================== */
+        .hero-section {
+            position: relative;
+            background: radial-gradient(circle at 80% 20%, rgba(14, 165, 233, 0.18), transparent 45%),
+                        radial-gradient(circle at 10% 80%, rgba(16, 185, 129, 0.15), transparent 40%),
+                        linear-gradient(135deg, #091527 0%, #112847 100%);
+            color: #ffffff;
+            padding: clamp(65px, 10vw, 100px) 0;
+            overflow: hidden;
+        }
+
+        .hero-badge {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(8px);
+            padding: 8px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: clamp(0.82rem, 2vw, 0.95rem);
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #7dd3fc;
+            margin-bottom: 22px;
+        }
+
+        .hero-title {
+            font-size: clamp(1.85rem, 5vw, 3rem);
+            font-weight: 900;
+            line-height: 1.35;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-highlight {
+            background: var(--brand-gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-gradient-cta {
+            background: var(--brand-gradient);
+            color: #ffffff;
+            font-weight: 800;
+            border: none;
+            padding: 13px 32px;
+            border-radius: 14px;
+            box-shadow: 0 10px 25px rgba(14, 165, 233, 0.35);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-gradient-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(16, 185, 129, 0.45);
+            color: #ffffff;
+        }
+
+        .btn-glass-cta {
+            background: rgba(255, 255, 255, 0.08);
+            color: #ffffff;
+            font-weight: 700;
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            padding: 13px 28px;
+            border-radius: 14px;
+            backdrop-filter: blur(6px);
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .btn-glass-cta:hover {
+            background: rgba(255, 255, 255, 0.18);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        /* قسم الطبيب وتعديل وضوح الصورة */
+        .doctor-card-box {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: clamp(18px, 4vw, 24px);
+            box-shadow: 0 20px 45px rgba(0, 0, 0, 0.08);
+            border: 1px solid rgba(14, 165, 233, 0.2);
+        }
+
+        .doctor-img-frame {
+            width: clamp(210px, 45vw, 270px);
+            height: clamp(210px, 45vw, 270px);
+            margin: 0 auto;
+            border-radius: 50%;
+            background: #ffffff;
+            padding: 12px;
+            box-shadow: 0 10px 30px rgba(14, 165, 233, 0.25);
+            position: relative;
+            overflow: hidden; /* يمنع ظهور السواد وأي زوائد خارج الدائرة */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .doctor-img-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+            transform: scale(1.42); /* تكبير الشعار للتركيز على الشعار والاسم وقص الأطراف السوداء */
+            transition: transform 0.4s ease;
+        }
+
+        .doctor-card-box:hover .doctor-img-frame img {
+            transform: scale(1.48);
+        }
+
+        .doctor-img-frame::after {
+            content: '';
+            position: absolute;
+            inset: -4px;
+            border-radius: 50%;
+            border: 2px dashed #0ea5e9;
+            pointer-events: none;
+            animation: spinRing 20s linear infinite;
+        }
+
+        @keyframes spinRing {
+            100% { transform: rotate(360deg); }
+        }
+
+        /* سلايدر العيادة */
+        .carousel-fade .carousel-item {
+            opacity: 0;
+            transition-duration: 1.1s;
+            transition-property: opacity, transform;
+            transform: scale(1.03);
+        }
+        .carousel-fade .carousel-item.active {
+            opacity: 1;
+            transform: scale(1);
+        }
+        .carousel-custom-img {
+            height: clamp(260px, 42vw, 420px);
+            object-fit: cover;
+            border-radius: 24px;
+            box-shadow: 0 14px 35px rgba(13, 30, 54, 0.1);
+        }
+
+        /* كروت الخدمات */
+        .service-card-modern {
+            background: #ffffff;
+            border-radius: 28px;
+            border: 1px solid rgba(14, 165, 233, 0.15);
+            padding: clamp(20px, 4vw, 38px);
+            box-shadow: 0 12px 35px rgba(13, 30, 54, 0.04);
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card-modern:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 20px 48px rgba(14, 165, 233, 0.14);
+            border-color: rgba(16, 185, 129, 0.4);
+        }
+
+        .service-tag {
+            display: inline-block;
+            background: rgba(14, 165, 233, 0.1);
+            color: #0284c7;
+            font-size: 0.84rem;
+            font-weight: 800;
+            padding: 5px 14px;
+            border-radius: 30px;
+            margin-bottom: 12px;
+        }
+
+        .service-title {
+            color: var(--brand-navy);
+            font-size: clamp(1.35rem, 3.5vw, 1.7rem);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        .floating-service-img-box {
+            position: relative;
+            border-radius: 22px;
+            overflow: hidden;
+            box-shadow: 0 16px 36px rgba(13, 30, 54, 0.1);
+            animation: floatUpDown 6s ease-in-out infinite alternate;
+        }
+
+        .floating-service-img-box img {
+            width: 100%;
+            height: clamp(240px, 36vw, 380px);
+            object-fit: cover;
+            display: block;
+            transition: transform 0.8s ease;
+        }
+
+        .service-card-modern:hover .floating-service-img-box img {
+            transform: scale(1.06);
+        }
+
+        @keyframes floatUpDown {
+            0% { transform: translateY(0px); }
+            100% { transform: translateY(-8px); }
+        }
+
+        .custom-bullet-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .custom-bullet-list li {
+            position: relative;
+            padding: 9px 32px 9px 10px;
+            font-size: clamp(0.92rem, 2vw, 0.98rem);
+            font-weight: 600;
+            color: #334155;
+            border-bottom: 1px dashed #e2e8f0;
+            transition: all 0.25s ease;
+        }
+
+        .custom-bullet-list li:last-child {
+            border-bottom: none;
+        }
+
+        .custom-bullet-list li::before {
+            content: "\f058";
+            font-family: "Font Awesome 6 Free";
+            font-weight: 900;
+            position: absolute;
+            right: 6px;
+            top: 10px;
+            color: var(--brand-mint);
+            font-size: 1.1rem;
+            transition: all 0.25s ease;
+        }
+
+        .custom-bullet-list li:hover {
+            color: var(--brand-navy);
+            background: rgba(14, 165, 233, 0.05);
+            border-radius: 8px;
+            padding-right: 36px;
+        }
+
+        .custom-bullet-list li:hover::before {
+            transform: scale(1.2);
+            color: var(--brand-teal);
+        }
+
+        .fast-card {
+            border-radius: 20px;
+            overflow: hidden;
+            position: relative;
+            min-height: 240px;
+            display: flex;
+            align-items: flex-end;
+            padding: 22px;
+            background-size: cover;
+            background-position: center;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease;
+        }
+
+        .fast-card:hover {
+            transform: translateY(-4px);
+        }
+
+        .fast-card-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(7, 17, 32, 0.92) 20%, rgba(7, 17, 32, 0.4) 100%);
+            z-index: 1;
+        }
+
+        .fast-card-content {
+            position: relative;
+            z-index: 2;
+            color: #ffffff;
+        }
+
+        /* حجز المواعيد */
+        .booking-card {
+            background: #ffffff;
+            border-radius: 28px;
+            padding: clamp(22px, 5vw, 45px);
+            box-shadow: 0 15px 40px rgba(13, 30, 54, 0.06);
+            border: 1px solid rgba(14, 165, 233, 0.15);
+        }
+
+        .form-control, .form-select {
+            border-radius: 12px;
+            padding: 12px 16px;
+            border: 1px solid #cbd5e1;
+            font-weight: 500;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--brand-teal);
+            box-shadow: 0 0 0 4px rgba(14, 165, 233, 0.15);
+        }
+
+        .btn-whatsapp-action {
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #ffffff;
+            border: none;
+            padding: 14px;
+            border-radius: 14px;
+            font-size: 1.15rem;
+            font-weight: 800;
+            box-shadow: 0 8px 24px rgba(37, 211, 102, 0.35);
+            transition: all 0.3s ease;
+        }
+
+        .btn-whatsapp-action:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 28px rgba(37, 211, 102, 0.45);
+            color: #ffffff;
+        }
+
+        /* ========================================================
+           الفوتر
+        ======================================================== */
+        .footer-dark {
+            background-color: var(--brand-dark);
+            color: #ffffff;
+            padding: 60px 0 35px 0;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .footer-social-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            color: #ffffff;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            margin: 0 5px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .footer-social-btn:hover {
+            background: var(--brand-gradient);
+            color: #ffffff;
+            transform: translateY(-3px);
+        }
+
+        .footer-bottom-box {
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .copyright-text {
+            color: #cbd5e1;
+            font-size: clamp(0.85rem, 2vw, 0.95rem);
+            font-weight: 500;
+        }
+
+        .designer-credit-box {
+            font-size: clamp(0.92rem, 2.2vw, 1.05rem);
+            color: #94a3b8;
+            font-weight: 600;
+        }
+
+        .designer-name-highlight {
+            background: linear-gradient(135deg, #38bdf8 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 900;
+            letter-spacing: 0.2px;
+            padding: 0 4px;
+            display: inline-block;
+            text-shadow: 0 0 15px rgba(56, 189, 248, 0.2);
+        }
+
+        /* زر واتساب العائم */
+        .floating-wa-btn {
+            position: fixed;
+            bottom: clamp(18px, 4vw, 28px);
+            left: clamp(18px, 4vw, 28px);
+            background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+            color: #ffffff;
+            width: clamp(54px, 12vw, 64px);
+            height: clamp(54px, 12vw, 64px);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.45);
+            z-index: 1060;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .floating-wa-btn:hover {
+            transform: scale(1.08) rotate(5deg);
+            color: #ffffff;
+        }
+
+        .wa-counter {
+            position: absolute;
+            top: -3px;
+            right: -3px;
+            background-color: #ef4444;
+            color: #fff;
+            width: 22px;
+            height: 22px;
+            border-radius: 50%;
+            font-size: 12px;
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ========================================================
+         القائمة العلوية Navbar
+    ======================================================== -->
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <div class="container d-flex align-items-center justify-content-between">
+            
+            <a class="brand-container" href="#">
+                <img src="logo.PNG" alt="شعار عيادة العلاج الطبيعي وإعادة التأهيل" class="brand-logo-img">
+                <span class="brand-title-single">عيادة العلاج الطبيعي وإعادة التأهيل</span>
+            </a>
+
+            <!-- زر القائمة -->
+            <button class="menu-toggle-btn d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#mainMenu" aria-label="فتح القائمة">
+                <i class="fa-solid fa-bars-staggered"></i>
+            </button>
+
+            <!-- الروابط -->
+            <div class="collapse navbar-collapse nav-links-box mt-3 mt-lg-0" id="mainMenu">
+                <ul class="navbar-nav ms-auto text-center gap-1">
+                    <li class="nav-item"><a class="nav-link active" href="#home">الرئيسية</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#doctor">الطبيب المختص</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">من نحن</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services-section">خدماتنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#booking">حجز موعد</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">تواصل معنا</a></li>
+                </ul>
+            </div>
+
+        </div>
+    </nav>
+
+    <!-- القسم الرئيسي Hero -->
+    <header id="home" class="hero-section text-center text-lg-start">
+        <div class="container">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-8">
+                    <div class="hero-badge">
+                        <i class="fa-solid fa-circle-check text-success"></i>
+                        <span>عيادة مرخصة بأعلى معايير الرعاية والتأهيل</span>
+                    </div>
+                    <h1 class="hero-title mb-4">
+                        استعد صحتك وحركتك <br>
+                        مع <span class="hero-highlight">عيادة العلاج الطبيعي وإعادة التأهيل</span>
+                    </h1>
+                    <p class="lead text-light opacity-90 mb-5 fs-5">
+                        تحت إشراف مباشر من أخصائي العلاج الطبيعي <strong>د. جلال مصطفى الحمادي</strong>، نبتكر لك برامج علاجية مخصصة بأحدث التجهيزات الطبية الحديثة.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center justify-content-lg-start">
+                        <a href="#booking" class="btn btn-gradient-cta fs-6">
+                            <i class="fa-regular fa-calendar-check me-2"></i> احجز استشارتك الآن
+                        </a>
+                        <a href="#services-section" class="btn btn-glass-cta fs-6">استكشف البرامج العلاجية</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- قسم الطبيب المختص مع الصورة النقية والبارزة -->
+    <section id="doctor" class="py-5 bg-white">
+        <div class="container py-4">
+            <div class="row align-items-center g-5">
+                <div class="col-lg-5 text-center">
+                    <div class="doctor-card-box">
+                        <div class="doctor-img-frame">
+                            <img src="logo.PNG" alt="د. جلال الحمادي">
+                        </div>
+                        <h4 class="fw-bold mt-4 mb-1" style="color: var(--brand-navy);">د. جلال مصطفى الحمادي</h4>
+                        <span class="badge px-3 py-2 rounded-pill mt-2" style="background: var(--brand-gradient); color: #fff;">
+                            معالج فيزيائي وتأهيل حركي
+                        </span>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="ps-lg-3 text-center text-lg-start">
+                        <span class="service-tag">خبرة سريرية متقدمة</span>
+                        <h2 class="fw-bold mb-3 display-6" style="color: var(--brand-navy);">رعايتك خطوة بخطوة نحو التعافي التام</h2>
+                        <p class="text-muted leading-relaxed fs-5 mb-4">
+                            نؤمن في عيادتنا بأن كل مريض يمتلك حالة فريدة تتطلب خطة تأهيلية دقيقة. ندمج بين أحدث أجهزة العلاج الكهربائي والموجات الصوتية والتمارين الوظيفية لضمان التخلص من الألم واسترجاع المرونة الكاملة.
+                        </p>
+                        
+                        <div class="row g-3 text-start">
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-4 bg-light d-flex align-items-center gap-3 border">
+                                    <i class="fa-solid fa-phone fs-2 text-primary"></i>
+                                    <div>
+                                        <strong class="d-block text-dark">الهاتف المباشر</strong>
+                                        <span class="text-muted fw-bold" dir="ltr">+967 777545358</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="p-3 rounded-4 bg-light d-flex align-items-center justify-content-between border">
+                                    <div class="d-flex align-items-center gap-3">
+                                        <i class="fa-solid fa-location-dot fs-2 text-success"></i>
+                                        <div>
+                                            <strong class="d-block text-dark">الموقع</strong>
+                                            <span class="text-muted fw-bold">صنعاء – سعوان – شارع 40</span>
+                                        </div>
+                                    </div>
+                                    <a href="https://www.google.com/maps/dir/?api=1&destination=15.376781,44.243597" 
+                                       target="_blank" 
+                                       rel="noopener noreferrer" 
+                                       class="btn btn-sm btn-outline-primary rounded-pill px-3 fw-bold" 
+                                       title="فتح الاتجاهات">
+                                        <i class="fa-solid fa-diamond-turn-right me-1"></i> الاتجاهات
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم من نحن -->
+    <section id="about" class="py-5" style="background-color: #f8fafc;">
+        <div class="container py-3">
+            <div class="row align-items-center g-5">
+                
+                <div class="col-lg-6">
+                    <div id="clinicCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel" data-bs-interval="2600">
+                        <div class="carousel-indicators">
+                            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="0" class="active"></button>
+                            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="1"></button>
+                            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="2"></button>
+                            <button type="button" data-bs-target="#clinicCarousel" data-bs-slide-to="3"></button>
+                        </div>
+                        <div class="carousel-inner rounded-4 overflow-hidden">
+                            <div class="carousel-item active">
+                                <img src="imges.jpeg" class="d-block w-100 carousel-custom-img" alt="صورة العيادة 1">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="img.jpeg" class="d-block w-100 carousel-custom-img" alt="صورة العيادة 2">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imgess.jpeg" class="d-block w-100 carousel-custom-img" alt="صورة العيادة 3">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imge.jpeg" class="d-block w-100 carousel-custom-img" alt="صورة العيادة 4">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev" type="button" data-bs-target="#clinicCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon"></span>
+                        </button>
+                        <button class="carousel-control-next" type="button" data-bs-target="#clinicCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon"></span>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="col-lg-6">
+                    <span class="service-tag">بيئة استشفائية متكاملة</span>
+                    <h2 class="fw-bold mb-3" style="color: var(--brand-navy);">من نحن</h2>
+                    <p class="text-dark fw-bold fs-5 leading-relaxed p-3 rounded-4 mb-3" style="background: rgba(14, 165, 233, 0.08); border-right: 4px solid var(--brand-teal);">
+                        نعتمد بإشراف المعالج الفيزيائي د. جلال مصطفى الحمادي على خطة علاجية مخصصة تشمل أحدث التقنيات والأجهزة لضمان استعادة العضلات والمفاصل لكفاءتها الطبيعية.
+                    </p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-3 d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check fs-4 text-success flex-shrink-0"></i>
+                            <span class="fw-bold text-dark">تشخيص سريري وفحص مخصص لكل حالة على حدة.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check fs-4 text-success flex-shrink-0"></i>
+                            <span class="fw-bold text-dark">أجهزة متقدمة للعلاج الحراري، الكهرومغناطيسي، وأشعة الليزر.</span>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center gap-3">
+                            <i class="fa-solid fa-circle-check fs-4 text-success flex-shrink-0"></i>
+                            <span class="fw-bold text-dark">متابعة مستمرة وتعديل أسبوعي للتمارين الحركية.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- بطاقات الأقسام التعريفية السريعة -->
+            <div class="row g-4 mt-4">
+                <div class="col-md-4">
+                    <div class="fast-card" style="background-image: url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=800&q=80');">
+                        <div class="fast-card-overlay"></div>
+                        <div class="fast-card-content">
+                            <h4 class="fw-bold mb-1">العلاج الطبيعي</h4>
+                            <p class="small text-light opacity-90 m-0">مساج علاجي، حجامة حديثة، إبر صينية، وتسكين آلام.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fast-card" style="background-image: url('https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80');">
+                        <div class="fast-card-overlay"></div>
+                        <div class="fast-card-content">
+                            <h4 class="fw-bold mb-1">التأهيل الحركي</h4>
+                            <p class="small text-light opacity-90 m-0">تأهيل ما بعد العمليات المعقدة، والكسور، واستعادة المرونة.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="fast-card" style="background-image: url('https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=800&q=80');">
+                        <div class="fast-card-overlay"></div>
+                        <div class="fast-card-content">
+                            <h4 class="fw-bold mb-1">الإصابات العصبية</h4>
+                            <p class="small text-light opacity-90 m-0">علاج وتأهيل الجلطات الدماغية والتهاب العصب الخامس والسابع.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- أقسام الخدمات الخمسة -->
+    <section id="services-section" class="py-5 bg-white">
+        <div class="container py-4">
+            
+            <div class="text-center mb-5">
+                <span class="service-tag">خدماتنا الطبية التخصصية</span>
+                <h2 class="fw-bold display-6" style="color: var(--brand-navy);">برامج العلاج الفيزيائي والتأهيل الشامل</h2>
+                <p class="text-muted mx-auto fs-5" style="max-width: 650px;">منظومة سريرية متقدمة تشمل جميع احتياجات المرضى والمصابين بأعلى مستويات الجودة.</p>
+            </div>
+
+            <div class="d-flex flex-column gap-5">
+
+                <!-- 1. دور العلاج الطبيعي للعظام -->
+                <div class="service-card-modern">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <div class="floating-service-img-box">
+                                <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?auto=format&fit=crop&w=900&q=80" alt="العلاج الطبيعي للعظام">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="service-tag">صحة العظام والعمود الفقري</span>
+                            <h3 class="service-title">دور العلاج الطبيعي للعظام</h3>
+                            <div class="row g-2">
+                                <div class="col-sm-6">
+                                    <ul class="custom-bullet-list">
+                                        <li>علاج آلام الظهر الحادة والمزمنة</li>
+                                        <li>علاج آلام الرقبة الحادة والمزمنة</li>
+                                        <li>علاج إلتهاب وخشونة وتيبس المفاصل</li>
+                                        <li>علاج حالات الشد العضلي الحادة والمزمنة</li>
+                                        <li>علاج حالات إلتهاب والأربطة والأوتار</li>
+                                        <li>تأهيل حالات ما بعد الكسور</li>
+                                        <li>تأهيل جميع حالات ما بعد العمليات الجراحية للعظام</li>
+                                        <li>تأهيل حالات ضعف وضمور العضلات</li>
+                                    </ul>
+                                </div>
+                                <div class="col-sm-6">
+                                    <ul class="custom-bullet-list">
+                                        <li>علاج حالات مسمار القدم العظمي</li>
+                                        <li>تأهيل حالات تشوهات العمود الفقري (التحدب - الجنف)</li>
+                                        <li>علاج حالات الرضوض والكدمات السطحية والعميقة</li>
+                                        <li>تأهيل حالات خلع المفصل المتكرر</li>
+                                        <li>علاج وتأهيل حالات جرحى الحرب</li>
+                                        <li>تأهيل حالات ما بعد الحروق</li>
+                                        <li>تأهيل حالات الإصابات الرياضية</li>
+                                        <li>علاج وتأهيل جميع حالات الاضطراب الهيكلي والعضلي</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. دور العلاج الطبيعي للمخ والأعصاب -->
+                <div class="service-card-modern">
+                    <div class="row align-items-center g-4 flex-lg-row-reverse">
+                        <div class="col-lg-6">
+                            <div class="floating-service-img-box" style="animation-delay: -2s;">
+                                <img src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?auto=format&fit=crop&w=900&q=80" alt="المخ والأعصاب">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="service-tag">التأهيل العصبي المتقدم</span>
+                            <h3 class="service-title">دور العلاج الطبيعي للمخ والأعصاب</h3>
+                            <ul class="custom-bullet-list">
+                                <li>تأهيل حالات ما بعد الجلطات الدماغية</li>
+                                <li>تأهيل حالات إصابات الأعصاب الطرفية</li>
+                                <li>تأهيل حالات الشلل الوجهي (العصب السابع - العصب الخامس)</li>
+                                <li>تأهيل حالات إصابات وأمراض الحبل الشوكي</li>
+                                <li>علاج حالات الإنزلاقات الغضروفية والفقرات (عرق النسا)</li>
+                                <li>تأهيل حالات ما بعد الإصابات الدماغية والحوادث</li>
+                                <li>تأهيل جميع حالات ما بعد العمليات الجراحية للأعصاب</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. دور العلاج الطبيعي للأطفال وحديثي الولادة -->
+                <div class="service-card-modern">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <div class="floating-service-img-box" style="animation-delay: -3.5s;">
+                                <img src="https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?auto=format&fit=crop&w=900&q=80" alt="علاج الأطفال">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="service-tag">رعاية الطفولة المبكرة</span>
+                            <h3 class="service-title">دور العلاج الطبيعي للأطفال وحديثي الولادة</h3>
+                            <ul class="custom-bullet-list">
+                                <li>تأهيل حالات ضمور الدماغ</li>
+                                <li>تأهيل حالات تقوسات الأطراف السفلية والقدم المسطحة</li>
+                                <li>تأهيل حالات ليونة وتشوهات العظام</li>
+                                <li>تأهيل حالات متلازمة داون</li>
+                                <li>علاج وتأهيل الاضطراب العضلي الهيكلي عند حالات التوحد</li>
+                                <li>تأهيل حالات إصابة الضفيرة العضدية</li>
+                                <li>علاج وتأهيل جميع حالات الاضطراب العضلية والهيكلية والعصبية للأطفال</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. دور العلاج الطبيعي في الجراحة -->
+                <div class="service-card-modern">
+                    <div class="row align-items-center g-4 flex-lg-row-reverse">
+                        <div class="col-lg-6">
+                            <div class="floating-service-img-box" style="animation-delay: -1.5s;">
+                                <img src="https://images.unsplash.com/photo-1551076805-e1869033e561?auto=format&fit=crop&w=900&q=80" alt="التأهيل الجراحي">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="service-tag">التعافي بعد العمليات</span>
+                            <h3 class="service-title">دور العلاج الطبيعي في الجراحة</h3>
+                            <ul class="custom-bullet-list">
+                                <li>تأهيل الحالات ما بعد عمليات البتر</li>
+                                <li>تأهيل جميع الحالات بعد العمليات الجراحية ومنع حدوث المضاعفات</li>
+                                <li>علاج وتخفيف الآلام وتحفيز تدفق الدورة الدموية للأنسجة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. دور العلاج الطبيعي في العناية المركزة -->
+                <div class="service-card-modern">
+                    <div class="row align-items-center g-4">
+                        <div class="col-lg-6">
+                            <div class="floating-service-img-box" style="animation-delay: -4s;">
+                                <img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?auto=format&fit=crop&w=900&q=80" alt="العناية المركزة">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <span class="service-tag">الرعاية السريرية الفائقة</span>
+                            <h3 class="service-title">دور العلاج الطبيعي في العناية المركزة</h3>
+                            <ul class="custom-bullet-list">
+                                <li>منع المضاعفات مثل تورم الأطراف وضمور وضعف العضلات</li>
+                                <li>منع تيبس المفاصل والحفاظ على المدى الحركي الطبيعي</li>
+                                <li>منع حدوث قرح الفراش ومعالجتها إن وجدت</li>
+                                <li>تنشيط الدورة الدموية والجهاز التنفسي مما يعزز ويسرع من عملية الشفاء</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم حجز المواعيد -->
+    <section id="booking" class="py-5" style="background-color: var(--bg-light);">
+        <div class="container py-3">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="booking-card">
+                        <div class="text-center mb-4">
+                            <span class="service-tag">حجز استشارة</span>
+                            <h3 class="fw-bold" style="color: var(--brand-navy);">طلب حجز موعد جلسة طبية</h3>
+                            <p class="text-muted">نسق موعدك مباشرة وبكل سهولة مع <strong>د. جلال مصطفى الحمادي</strong></p>
+                        </div>
+                        
+                        <form id="appointmentForm" onsubmit="sendToWhatsApp(event);">
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-dark">الاسم الكامل <span class="text-danger">*</span></label>
+                                    <input type="text" id="patientName" class="form-control" required placeholder="أدخل اسمك الكريم">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-dark">رقم الهاتف <span class="text-danger">*</span></label>
+                                    <input type="tel" id="patientPhone" class="form-control" required placeholder="مثال: 777000000">
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-dark">نوع الخدمة المطلوبة <span class="text-danger">*</span></label>
+                                    <select id="patientService" class="form-select" required>
+                                        <option value="">اختر التخصص المطلوب...</option>
+                                        <option value="دور العلاج الطبيعي للعظام">دور العلاج الطبيعي للعظام</option>
+                                        <option value="دور العلاج الطبيعي للمخ والاعصاب">دور العلاج الطبيعي للمخ والاعصاب</option>
+                                        <option value="دور العلاج الطبيعي للاطفال وحديثي الولادة">دور العلاج الطبيعي للاطفال وحديثي الولادة</option>
+                                        <option value="دور العلاج الطبيعي في الجراحة">دور العلاج الطبيعي في الجراحة</option>
+                                        <option value="دور العلاج الطبيعي في العناية المركزة">دور العلاج الطبيعي في العناية المركزة</option>
+                                        <option value="كشف عام واستشارة خاصة مع د. جلال">كشف عام واستشارة خاصة مع د. جلال</option>
+                                    </select>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label fw-bold small text-dark">التاريخ المقترح <span class="text-danger">*</span></label>
+                                    <input type="date" id="appointmentDate" class="form-control" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label fw-bold small text-dark">شرح الحالة أو ملاحظات (اختياري)</label>
+                                    <textarea id="patientNotes" class="form-control" rows="3" placeholder="اشرح باختصار ما تشعر به أو أي تشخيص سابق..."></textarea>
+                                </div>
+                                <div class="col-12 text-center mt-4">
+                                    <button type="submit" class="btn btn-whatsapp-action w-100 d-flex align-items-center justify-content-center gap-2">
+                                        <i class="fab fa-whatsapp fs-4"></i>
+                                        <span>تأكيد وإرسال عبر واتساب</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- الفوتر Footer -->
+    <footer id="contact" class="footer-dark">
+        <div class="container text-center">
+            
+            <h4 class="fw-bold mb-2">عيادة العلاج الطبيعي وإعادة التأهيل</h4>
+            <p class="fs-4 fw-bold mb-4" style="background: var(--brand-gradient); -webkit-background-clip: text; -webkit-text-fill-color: transparent;" dir="ltr">+967 777545358</p>
+            
+            <div class="mb-4">
+                <a href="https://wa.me/967777545358" class="footer-social-btn" target="_blank" title="واتساب"><i class="fab fa-whatsapp"></i></a>
+                <a href="#" class="footer-social-btn" target="_blank" title="فيسبوك"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="footer-social-btn" target="_blank" title="انستغرام"><i class="fab fa-instagram"></i></a>
+            </div>
+
+            <p class="text-light opacity-75 mb-3">اليمن – صنعاء – سعوان – شارع الأربعين</p>
+            
+            <div class="mb-4">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=15.376781,44.243597" 
+                   target="_blank" 
+                   rel="noopener noreferrer" 
+                   class="btn btn-gradient-cta btn-sm px-4 py-2 fs-6">
+                    <i class="fa-solid fa-diamond-turn-right me-2"></i> احصل على الاتجاهات على خرائط جوجل
+                </a>
+            </div>
+
+            <div class="footer-bottom-box">
+                <p class="copyright-text mb-2">جميع الحقوق محفوظة &copy; 2026 عيادة العلاج الطبيعي وإعادة التأهيل - د. جلال الحمادي</p>
+                <p class="designer-credit-box m-0">
+                    تصميم وتنفيذ : <span class="designer-name-highlight">إبراهيم الحمادي</span>
+                </p>
+            </div>
+
+        </div>
+    </footer>
+
+    <!-- زر واتساب العائم -->
+    <a href="https://wa.me/967777545358?text=السلام%20عليكم%20دكتور%20جلال،%20أود%20الاستفسار%20عن%20مواعيد%20العيادة" class="floating-wa-btn" target="_blank" title="تواصل عبر واتساب">
+        <i class="fab fa-whatsapp fs-2"></i>
+        <span class="wa-counter">1</span>
+    </a>
+
+    <!-- Bootstrap 5 JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- كود إرسال بيانات الحجز وإغلاق القائمة التلقائي في الهواتف -->
+    <script>
+        document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navbarCollapse = document.getElementById('mainMenu');
+                if (navbarCollapse && navbarCollapse.classList.contains('show')) {
+                    const bsCollapse = bootstrap.Collapse.getInstance(navbarCollapse) || new bootstrap.Collapse(navbarCollapse);
+                    bsCollapse.hide();
+                }
+            });
+        });
+
+        function sendToWhatsApp(e) {
+            e.preventDefault();
+
+            const doctorNumber = "967777545358";
+
+            const name = document.getElementById("patientName").value.trim();
+            const phone = document.getElementById("patientPhone").value.trim();
+            const service = document.getElementById("patientService").value;
+            const date = document.getElementById("appointmentDate").value;
+            const notes = document.getElementById("patientNotes").value.trim();
+
+            let message = "السلام عليكم دكتور جلال، أود حجز موعد جديد:\n\n";
+            message += "👤 *اسم المريض:* *" + name + "*\n";
+            message += "📱 *رقم الهاتف:* *" + phone + "*\n";
+            message += "🩺 *الخدمة المطلوبة:* *" + service + "*\n";
+            message += "📅 *التاريخ المقترح:* *" + date + "*\n";
+
+            if (notes !== "") {
+                message += "📝 *شرح الحالة / ملاحظات:* *" + notes + "*\n";
+            }
+
+            const encodedMessage = encodeURIComponent(message);
+            const whatsappURL = "https://wa.me/" + doctorNumber + "?text=" + encodedMessage;
+            
+            window.open(whatsappURL, "_blank");
+        }
+    </script>
+</body>
+</html>
